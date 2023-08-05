@@ -10,7 +10,8 @@ import { StyleSheet, Text, View } from 'react-native';
 // import Form from './components/Form';
 // import Login from './components/Login';
 // import RecapLogin from './components/RecapLogin';
-import TouchableExample from './components/TouchableExample';
+// import TouchableExample from './components/TouchableExample';
+import TouchablePratice from './components/TouchablePratice';
 
 export default function App() {
   return (
@@ -23,11 +24,12 @@ export default function App() {
       {/* <MyInput/> */}
       {/* <IncrementCounter/> */}
       {/* <Form/> */}
-      {/* <Login/> */}
+      {/* <Login/>
       {/* <RecapLogin/> */}
-      <View style = {{flex:1,justifyContent:'center',alignItems:'center'}}>
+      {/* <View style = {{flex:1,justifyContent:'center',alignItems:'center'}}>
         <TouchableExample/>
-      </View>
+      </View> */}
+      <TouchablePratice/>
     </View>
   );
 
