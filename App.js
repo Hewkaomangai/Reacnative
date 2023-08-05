@@ -11,7 +11,9 @@ import { StyleSheet, Text, View } from 'react-native';
 // import Login from './components/Login';
 // import RecapLogin from './components/RecapLogin';
 // import TouchableExample from './components/TouchableExample';
-import TouchablePratice from './components/TouchablePratice';
+// import TouchablePratice from './components/TouchablePratice';
+// import Example_useEffect from './components/Example_useEffect';
+import UseEffectFlatList from './components/UseEffectFlatList';
 
 export default function App() {
   return (
@@ -29,7 +31,9 @@ export default function App() {
       {/* <View style = {{flex:1,justifyContent:'center',alignItems:'center'}}>
         <TouchableExample/>
       </View> */}
-      <TouchablePratice/>
+      {/* <TouchablePratice/> */}
+      {/* <Example_useEffect/> */}
+      <UseEffectFlatList/>
     </View>
   );
 
