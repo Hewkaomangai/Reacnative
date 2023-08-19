@@ -13,7 +13,8 @@ import { StyleSheet, Text, View } from 'react-native';
 // import TouchableExample from './components/TouchableExample';
 // import TouchablePratice from './components/TouchablePratice';
 // import Example_useEffect from './components/Example_useEffect';
-import UseEffectFlatList from './components/UseEffectFlatList';
+// import UseEffectFlatList from './components/UseEffectFlatList';
+import RandomUsersScreen from './components/RandomUserScreen';
 
 export default function App() {
   return (
@@ -33,7 +34,8 @@ export default function App() {
       </View> */}
       {/* <TouchablePratice/> */}
       {/* <Example_useEffect/> */}
-      <UseEffectFlatList/>
+      {/* <UseEffectFlatList/> */}
+      <RandomUsersScreen/>
     </View>
   );
 
@@ -44,5 +46,7 @@ const styles = StyleSheet.create({
     flex:1,
     justifyContent: 'center',
     alignItems: 'center',
+    padding: 5,
+    margin:10
   }
 });
