@@ -16,11 +16,12 @@ import { StyleSheet, Text, View } from 'react-native';
 // import UseEffectFlatList from './components/UseEffectFlatList';
 // import RandomUsersScreen from './components/RandomUserScreen';
 // import FLastListAPI from './components/FLastListAPI';
-import News from './components/News';
+// import News from './components/News';
+import ProductScreen from './components/ProductScreen';
 
 export default function App() {
   return (
-    <View style = {styles.container}>
+    <View>
       {/* <ViewBoxesWithColorAndText /> */}
       {/* <DisplayandImage/> */}
       {/* <LotsOfGreeting/> */}
@@ -39,19 +40,20 @@ export default function App() {
       {/* <UseEffectFlatList/> */}
       {/* <RandomUsersScreen/> */}
       {/* <FLastListAPI/> */}
-      <News/>
+      {/* <News/> */}
+      <ProductScreen/>
 
     </View>
   );
 
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex:1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 5,
-    margin:10
-  }
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     flex:1,
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     padding: 5,
+//     margin:10
+//   }
+// });
