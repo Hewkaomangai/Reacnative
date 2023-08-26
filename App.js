@@ -14,7 +14,9 @@ import { StyleSheet, Text, View } from 'react-native';
 // import TouchablePratice from './components/TouchablePratice';
 // import Example_useEffect from './components/Example_useEffect';
 // import UseEffectFlatList from './components/UseEffectFlatList';
-import RandomUsersScreen from './components/RandomUserScreen';
+// import RandomUsersScreen from './components/RandomUserScreen';
+// import FLastListAPI from './components/FLastListAPI';
+import News from './components/News';
 
 export default function App() {
   return (
@@ -35,7 +37,10 @@ export default function App() {
       {/* <TouchablePratice/> */}
       {/* <Example_useEffect/> */}
       {/* <UseEffectFlatList/> */}
-      <RandomUsersScreen/>
+      {/* <RandomUsersScreen/> */}
+      {/* <FLastListAPI/> */}
+      <News/>
+
     </View>
   );
 
