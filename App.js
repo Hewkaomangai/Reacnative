@@ -1,59 +1,46 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-// import ViewBoxesWithColorAndText from './components/ViewBoxesWithColorAndText';
-// import DisplayandImage from './components/DisplayandImage';
-//import LotsOfGreeting from './components/LotsOfGreeting';
-//import CustomText from './components/CustomText';
-// import Counter from './components/Counter';
-// import MyInput from './components/MyInput';
-// import IncrementCounter from './components/IncrementCounter';
-// import Form from './components/Form';
-// import Login from './components/Login';
-// import RecapLogin from './components/RecapLogin';
-// import TouchableExample from './components/TouchableExample';
-// import TouchablePratice from './components/TouchablePratice';
-// import Example_useEffect from './components/Example_useEffect';
-// import UseEffectFlatList from './components/UseEffectFlatList';
-// import RandomUsersScreen from './components/RandomUserScreen';
-// import FLastListAPI from './components/FLastListAPI';
-// import News from './components/News';
-import ProductScreen from './components/ProductScreen';
+import { StyleSheet, Text, View, Button } from 'react-native'
+import React from 'react'
+import { NavigationContainer } from '@react-navigation/native'
+import {createNativeStackNavigator} from '@react-navigation/native-stack'
 
-export default function App() {
-  return (
-    <View>
-      {/* <ViewBoxesWithColorAndText /> */}
-      {/* <DisplayandImage/> */}
-      {/* <LotsOfGreeting/> */}
-      {/* <CustomText/> */}
-      {/* <Counter /> */}
-      {/* <MyInput/> */}
-      {/* <IncrementCounter/> */}
-      {/* <Form/> */}
-      {/* <Login/>
-      {/* <RecapLogin/> */}
-      {/* <View style = {{flex:1,justifyContent:'center',alignItems:'center'}}>
-        <TouchableExample/>
-      </View> */}
-      {/* <TouchablePratice/> */}
-      {/* <Example_useEffect/> */}
-      {/* <UseEffectFlatList/> */}
-      {/* <RandomUsersScreen/> */}
-      {/* <FLastListAPI/> */}
-      {/* <News/> */}
-      <ProductScreen/>
 
+function HomeScreen({navigation}){
+  return(
+    <View style={{flex:1, alignItems:'center', justifyContent:'center'}}>
+      <Text>Home Screen</Text>
+      <Button
+       title='Go to Details'
+       onPress={()=>navigation.navigate('Details')}/>
     </View>
-  );
-
+  )
 }
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex:1,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//     padding: 5,
-//     margin:10
-//   }
-// });
+function DetailsScreen(){
+  return(
+    <View style={{flex:1, alignItems:'center', justifyContent:'center'}}>
+      <Text>Details Screen</Text>
+    </View>
+  )
+}
+
+const Stack = createNativeStackNavigator();
+
+const App = () => {
+  return (
+    
+    <NavigationContainer initialRouteName='Home'>
+      <Stack.Navigator>
+        <Stack.Screen 
+         name='Home' 
+         component={HomeScreen}
+         options={{title:'Overview'}}/>
+         <Stack.Screen name='Details' component={DetailsScreen}/>
+      </Stack.Navigator>
+    </NavigationContainer>
+
+  )
+}
+
+export default App
+
+const styles = StyleSheet.create({})
