@@ -1,81 +1,74 @@
-import "react-native-gesture-handler";
-import { View, Text, Linking } from "react-native";
-import React from "react";
+import { View, Text } from 'react-native'
+import React from 'react'
 
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { 
-  createDrawerNavigator,
-  DrawerContentScrollView,
-  DrawerItemList,
-  DrawerItem
- } from "@react-navigation/drawer";
+import {NavigationContainer} from '@react-navigation/native'
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
+import {MaterialCommunityIcons} from '@expo/vector-icons'
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs'
 
-import FirstPage from "./pages/FirstPage";
-import SecondPage from "./pages/SecondPage";
-
-import CustomSIdeBarMenu from "./pages/CustomSIdeBarMenu";
-
-const Stack = createNativeStackNavigator();
-
-function FirstDrawer() {
-  return (
-    <Stack.Navigator
-      initialRouteName="FirstPage"
-      screenOptions={{headerShown:false}}
-    >
-      <Stack.Screen name="FirstPage" component={FirstPage} />
-    </Stack.Navigator>
-  );
+function Feed(){
+    return(
+        <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
+            <Text>Feed</Text>
+        </View>
+    )
 }
 
-function SecondDrawer() {
-  return (
-    <Stack.Navigator
-      screenOptions={{headerShown:false}}
-    >
-      <Stack.Screen name="SecondPage" component={SecondPage} />
-    </Stack.Navigator>
-  );
+function Profile(){
+    return(
+        <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
+            <Text>Profile</Text>
+        </View>
+    )
 }
 
-const Drawer = createDrawerNavigator();
+function Notifications(){
+    return(
+        <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
+            <Text>Notifications</Text>
+        </View>
+    )
+}
 
-function MyDrawer() {
-  return (
-    <Drawer.Navigator
-      screenOptions={{
-        drawerStyle: {
-          backgroundColor: "#c6cbef",
-          width: 240,
-        },
-        headerStyle: {
-          backgroundColor: "#000",
-        },
-        headerTintColor: "#fff",
-      }}
-      drawerContent={(props)=><CustomSIdeBarMenu{...props}/>}
-    >
-      <Drawer.Screen
-        name="FirstDrawer"
-        component={FirstDrawer}
-        options={{ drawerLabel: "First Page option" }}
-      />
-      <Drawer.Screen
-        name="SecondDrawer"
-        component={SecondDrawer}
-        options={{ drawerLabel: "Second Page option" }}
-      />
-    </Drawer.Navigator>
-  );
+const Tab = createMaterialBottomTabNavigator();
+
+function MyTabs(){
+    return(
+        <Tab.Navigator
+         initialRouteName='Feed'
+         activeColor = '#e9101a'
+         labelStyle = {{fontSize:12}}
+         style = {{backgroundColor: 'tomato'}}
+        >
+
+        <Tab.Screen name='Feed' component={Feed} options={{
+            tabBarLabel:'Home',
+            tabBarIcon:({color})=>(
+                <MaterialCommunityIcons name='home' color={color} size={26}/>
+            )
+        }}/>
+        <Tab.Screen name='Notifications' component={Notifications} options={{
+            tabBarLabel:'Updates',
+            tabBarIcon:({color})=>(
+                <MaterialCommunityIcons name='bell' color={color} size={26}/>
+            )
+        }}/>
+        <Tab.Screen name='Profile' component={Profile} options={{
+            tabBarLabel:'Profile',
+            tabBarIcon:({color})=>(
+                <MaterialCommunityIcons name='account' color={color} size={26}/>
+            )
+        }}/>
+        </Tab.Navigator>
+    )
 }
 
 const App = () => {
   return (
     <NavigationContainer>
-      <MyDrawer />
+        <MyTabs/>
     </NavigationContainer>
-  );
-};
+  )
+}
 
-export default App;
+export default App
